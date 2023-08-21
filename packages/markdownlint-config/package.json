@@ -1,0 +1,27 @@
+{
+  "name": "mlp-markdownlint-config",
+  "version": "0.0.1",
+  "description": "markdown lint package",
+  "keywords": [
+    "markdown",
+    "lint"
+  ],
+  "author": "yanlei <1239722456@qq.com>",
+  "homepage": "https://github.com/ygood/multiple-lint-pkg#readme",
+  "license": "MIT",
+  "main": "index.json",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ygood/multiple-lint-pkg.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ygood/multiple-lint-pkg/issues"
+  },
+  "peerDependencies": {
+    "markdownlint": "0.30.0",
+    "markdownlint-cli": "0.35.0"
+  }
+}
