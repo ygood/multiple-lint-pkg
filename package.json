@@ -1,7 +1,7 @@
 {
   "name": "multiple-lint-pkg",
   "private": "true",
-  "description": "A static site based on dumi",
+  "description": "One has multiple lint types of PKG",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "prepare": "husky install && dumi setup",

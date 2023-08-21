@@ -1,8 +1,8 @@
 ---
-title: A static site based on dumi
+title: One has multiple lint types of PKG
 hero:
-  title: Site
-  description: A static site based on dumi
+  title: multiple lint pkg
+  description: One has multiple lint types of PKG
   actions:
     - text: Hello
       link: /
