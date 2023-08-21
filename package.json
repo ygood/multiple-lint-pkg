@@ -34,9 +34,6 @@
     "lint-staged": "^14.0.0",
     "prettier": "^3.0.2"
   },
-  "workspaces": [
-    "packages/*"
-  ],
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
