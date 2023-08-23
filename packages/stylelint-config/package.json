@@ -1,0 +1,39 @@
+{
+  "name": "mlp-stylelint-config",
+  "version": "0.0.1",
+  "description": "style lint package",
+  "keywords": [
+    "style",
+    "lint",
+    "css",
+    "less",
+    "scss"
+  ],
+  "author": "yanlei <1239722456@qq.com>",
+  "homepage": "https://github.com/ygood/multiple-lint-pkg#readme",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "peerDependencies": {
+    "stylelint": ">=8.3.0",
+    "stylelint-scss": ">=2.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29.5.0",
+    "stylelint": "^14.3.0",
+    "stylelint-scss": "^4.1.0",
+    "postcss-scss": "4.0.7"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ygood/multiple-lint-pkg.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ygood/multiple-lint-pkg/issues"
+  }
+}
