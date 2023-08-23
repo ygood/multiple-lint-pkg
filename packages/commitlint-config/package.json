@@ -1,0 +1,29 @@
+{
+  "name": "mlp-commitlint-config",
+  "version": "0.0.1",
+  "description": "commit lint package",
+  "keywords": [
+    "git",
+    "git-commit",
+    "lint",
+    "message",
+    "commitlint"
+  ],
+  "author": "yanlei <1239722456@qq.com>",
+  "homepage": "https://github.com/ygood/multiple-lint-pkg#readme",
+  "license": "MIT",
+  "main": "index.js",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ygood/multiple-lint-pkg.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ygood/multiple-lint-pkg/issues"
+  },
+  "dependencies": {
+    "conventional-changelog-conventionalcommits": "^4.5.0"
+  }
+}
