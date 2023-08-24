@@ -93,6 +93,31 @@ npm i -D mlp-eslint-config @babel/core @babel/eslint-parser eslint-plugin-import
 }
 ```
 
+## JavaScript (Node.js) 项目 - mlp-eslint-config/node
+
+针对 Node.js 项目，继承了默认配置和 [eslint-config-egg 的规则](https://github.com/eggjs/eslint-config-egg/blob/master/lib/rules/node.js)，规则由 ESLint 原生规则和 [eslint-plugin-node](https://github.com/mysticatea/eslint-plugin-node) 提供。
+
+### 依赖
+
+- [@babel/core](https://www.npmjs.com/package/@babel/core)@^7.16.0
+- [@babel/eslint-parser](https://www.npmjs.com/package/@babel/eslint-parser)@^7.16.3
+- [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import)@^2.25.3
+- [eslint-config-egg](https://www.npmjs.com/package/eslint-config-egg)@^10.0.0
+
+### 安装
+
+```shell
+npm i -D mlp-eslint-config @babel/core @babel/eslint-parser eslint-plugin-import eslint-config-egg
+```
+
+### 配置
+
+```json
+{
+  "extends": ["mlp-eslint-config/node"]
+}
+```
+
 ## TypeScript 项目 - mlp-eslint-config/typescript
 
 针对未使用 `React` 或 `Vue` 的 `TypeScript` 项目，继承了默认配置，并启用了 [@typescript-eslint/eslint-plugin](https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin) 插件的规则，使用 [@typescript-eslint/parser](https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/parser) 作为 parser。
