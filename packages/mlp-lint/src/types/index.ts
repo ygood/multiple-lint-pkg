@@ -6,6 +6,7 @@ export interface InitOptions {
   enableMarkdownlint?: boolean;
   enablePrettier?: boolean;
   rewriteConfig?: boolean;
+  disableNpmInstall?: boolean;
   eslintType?: string;
 }
 

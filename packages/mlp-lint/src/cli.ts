@@ -21,7 +21,6 @@ program
       // const configPath = path.resolve(cwd, `${PKG_NAME}.config.js`);
       // generateTemplate(cwd, require(configPath), true);
     } else {
-      console.log(cwd);
       await init({
         cwd,
         checkVersionUpdate: true,

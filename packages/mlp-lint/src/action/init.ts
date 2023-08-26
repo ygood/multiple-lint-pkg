@@ -1,10 +1,13 @@
 import fs from 'fs-extra';
 import inquirer from 'inquirer';
 import path from 'path';
-import { PROJECT_TYPES } from '../utils/contans';
+import spawn from 'cross-spawn';
+import npmType from '../utils/npm-type';
+import { PKG_NAME, PROJECT_TYPES } from '../utils/contans';
 import { InitOptions, PKG } from '../types';
 import log from '../utils/log';
 import conflictResolve from '../utils/conflict-resolve';
+import generateTemplate from '../utils/generate-template';
 
 let step = 0;
 
@@ -70,7 +73,7 @@ export default async (options: InitOptions) => {
   const pkgPath = path.resolve(cwd, 'package.json');
   const config: Record<string, any> = {};
   const isTest = process.env.NODE_ENV === 'test';
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const disableNpmInstall = options.disableNpmInstall || false;
   let pkg: PKG = fs.readJSONSync(pkgPath);
 
   // 初始化 `enableESLint`，是否启用esLint
@@ -109,15 +112,48 @@ export default async (options: InitOptions) => {
   }
 
   if (!isTest) {
+    // 处理之前项目中的可能存在依赖冲突和配置文件冲突
     log.info(`Step ${++step}. 检查并处理项目中可能存在的依赖和配置冲突`);
     pkg = await conflictResolve(cwd, options.rewriteConfig);
     log.success(`Step ${step}. 已完成项目依赖和配置冲突检查处理 :D`);
-    console.log(pkg);
-    // if (!disableNpmInstall) {
-    //   log.info(`Step ${++step}. 安装依赖`);
-    //   const npm = await npmType;
-    //   spawn.sync(npm, ['i', '-D', PKG_NAME], { stdio: 'inherit', cwd });
-    //   log.success(`Step ${step}. 安装依赖成功 :D`);
-    // }
+    if (!disableNpmInstall) {
+      log.info(`Step ${++step}. 安装依赖`);
+      const npm = await npmType;
+      // 安装当前包的依赖
+      spawn.sync(npm, ['i', '-D', PKG_NAME], { stdio: 'inherit', cwd });
+      // spawn.sync(npm, ['-h'], { stdio: 'inherit', cwd });
+      log.success(`Step ${step}. 安装依赖成功 :D`);
+    }
   }
+
+  // 更新 pkg.json
+  pkg = fs.readJSONSync(pkgPath);
+  // 在 `package.json` 中写入 `scripts`
+  if (!pkg.scripts) {
+    pkg.scripts = {};
+  }
+  if (!pkg.scripts[`${PKG_NAME}-scan`]) {
+    pkg.scripts[`${PKG_NAME}-scan`] = `${PKG_NAME} scan`;
+  }
+  if (!pkg.scripts[`${PKG_NAME}-fix`]) {
+    pkg.scripts[`${PKG_NAME}-fix`] = `${PKG_NAME} fix`;
+  }
+
+  // 配置 git hooks
+  log.info(`Step ${++step}. 配置 git commit 代码校验，以及commit-msg校验`);
+  if (!pkg.husky) pkg.husky = {};
+  if (!pkg.husky.hooks) pkg.husky.hooks = {};
+  pkg.husky.hooks['pre-commit'] = `${PKG_NAME} commit-file-scan`;
+  pkg.husky.hooks['commit-msg'] = `${PKG_NAME} commit-msg-scan`;
+  fs.writeFileSync(pkgPath, JSON.stringify(pkg, null, 2));
+  log.success(`Step ${step}. 配置 git commit 代码校验，以及commit-msg校验成功 :D`);
+
+  // 生成对应的配置文件
+  log.info(`Step ${++step}. 写入配置文件`);
+  generateTemplate(cwd, config);
+  log.success(`Step ${step}. 写入配置文件成功 :D`);
+
+  // 完成信息
+  const logs = [`${PKG_NAME} 初始化完成 :D`].join('\r\n');
+  log.success(logs);
 };
