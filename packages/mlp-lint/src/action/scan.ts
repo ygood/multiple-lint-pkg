@@ -2,6 +2,7 @@ import path from 'path';
 import fs from 'fs-extra';
 import { Config, IPKG, IScanOptions, ScanResult } from '../types';
 import { PKG_NAME } from '../utils/contans';
+import execPrettier from '../lints/prettier';
 
 export default async (options: IScanOptions) => {
   const { cwd, fix, outputReport, config: scanConfig } = options;
@@ -15,8 +16,9 @@ export default async (options: IScanOptions) => {
   let results: ScanResult[] = [];
 
   if (config.enablePrettier) {
-    // TODO
+    await execPrettier(options);
   }
+
   if (config.enableESLint) {
     // TODO
   }
