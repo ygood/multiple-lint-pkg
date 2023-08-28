@@ -2,7 +2,7 @@ import path from 'path';
 import fs from 'fs-extra';
 import inquirer from 'inquirer';
 import { globSync } from 'glob';
-import { PKG } from '../types';
+import { IPKG } from '../types';
 import log from './log';
 import { PKG_NAME } from './contans';
 
@@ -55,7 +55,7 @@ const checkReWriteConfig = (cwd: string) => {
 
 export default async (cwd: string, rewriteConfig?: boolean) => {
   const pkgPath = path.resolve(cwd, 'package.json');
-  const pkg: PKG = fs.readJSONSync(pkgPath);
+  const pkg: IPKG = fs.readJSONSync(pkgPath);
   const dependencies = [].concat(
     Object.keys(pkg.dependencies || {}),
     Object.keys(pkg.devDependencies || []),

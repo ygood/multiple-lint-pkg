@@ -4,7 +4,7 @@ import path from 'path';
 import spawn from 'cross-spawn';
 import npmType from '../utils/npm-type';
 import { PKG_NAME, PROJECT_TYPES } from '../utils/contans';
-import { InitOptions, PKG } from '../types';
+import { IInitOptions, IPKG } from '../types';
 import log from '../utils/log';
 import conflictResolve from '../utils/conflict-resolve';
 import generateTemplate from '../utils/generate-template';
@@ -68,13 +68,13 @@ const chooseEnablePrettier = async () => {
   return enable;
 };
 
-export default async (options: InitOptions) => {
+export default async (options: IInitOptions) => {
   const cwd = options.cwd || process.cwd();
   const pkgPath = path.resolve(cwd, 'package.json');
   const config: Record<string, any> = {};
   const isTest = process.env.NODE_ENV === 'test';
   const disableNpmInstall = options.disableNpmInstall || false;
-  let pkg: PKG = fs.readJSONSync(pkgPath);
+  let pkg: IPKG = fs.readJSONSync(pkgPath);
 
   // 初始化 `enableESLint`，是否启用esLint
   if (typeof options.enableESLint === 'boolean') {
