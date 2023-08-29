@@ -115,7 +115,7 @@ export default async (cwd: string, rewriteConfig?: boolean) => {
     delete (pkg.devDependencies || {})[name];
   }
   // 重写package.json配置
-  // fs.writeFileSync(path.resolve(cwd, 'package.json'), JSON.stringify(pkg, null, 2), 'utf8');
+  fs.writeFileSync(path.resolve(cwd, 'package.json'), JSON.stringify(pkg, null, 2), 'utf8');
 
   return pkg;
 };

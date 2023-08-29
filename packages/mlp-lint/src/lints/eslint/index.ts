@@ -1,3 +1,3 @@
-import doEslint from './doEslint';
+import execEslint from './execEslint';
 
-export default doEslint;
+export default execEslint;
