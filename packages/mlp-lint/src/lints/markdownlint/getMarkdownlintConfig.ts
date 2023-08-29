@@ -2,7 +2,7 @@ import markdownlint from 'markdownlint';
 import path from 'path';
 import { globSync } from 'glob';
 // import markdownLintConfig from 'mlp-markdownlint-config';
-import markdownLintConfig from '../../../../markdownlint-config';
+import markdownLintConfig from 'mlp-markdownlint-config';
 import { Config, IPKG, IScanOptions } from '../../types';
 
 type LintOptions = markdownlint.Options & { fix?: boolean };
