@@ -24,7 +24,7 @@
     "copyfiles": "copyfiles -a -u 1 \"src/config/**\" lib"
   },
   "publishConfig": {
-    "registry": "https://registry.npmmirror.com/"
+    "registry": "https://registry.npmjs.org/"
   },
   "repository": {
     "type": "git",
