@@ -82,10 +82,10 @@
     "lodash": "^4.17.21",
     "markdownlint": "^0.30.0",
     "markdownlint-rule-helpers": "^0.21.0",
-    "mlp-commitlint-config": "workspace:^",
-    "mlp-eslint-config": "workspace:^",
-    "mlp-markdownlint-config": "workspace:^",
-    "mlp-stylelint-config": "workspace:^",
+    "mlp-commitlint-config": "^1.0.0-alpha.0",
+    "mlp-eslint-config": "^1.0.0-alpha.0",
+    "mlp-markdownlint-config": "^1.0.0-alpha.0",
+    "mlp-stylelint-config": "^1.0.0-alpha.0",
     "ora": "^5.1.0",
     "prettier": "^3.0.2",
     "strip-ansi": "6.0.0",
@@ -94,5 +94,6 @@
     "terminal-link": "2.1.1",
     "text-table": "^0.2.0",
     "vue-eslint-parser": "^9.3.1"
-  }
+  },
+  "gitHead": "7d3a22044e14c6f326b540854fa92903a1804134"
 }

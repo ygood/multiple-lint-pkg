@@ -1,0 +1,8 @@
+17 error Error: Command failed with exit code 1: git remote update
+17 error fatal: unable to access 'https://github.com/ygood/multiple-lint-pkg.git/': Failed to connect to github.com port 443: Connection timed out
+17 error     at makeError (/home/yanlei/project/multiple-lint-pkg/node_modules/.pnpm/execa@5.1.1/node_modules/execa/lib/error.js:60:11)
+17 error     at Function.module.exports.sync (/home/yanlei/project/multiple-lint-pkg/node_modules/.pnpm/execa@5.1.1/node_modules/execa/index.js:194:17)
+17 error     at Object.execSync (/home/yanlei/project/multiple-lint-pkg/node_modules/.pnpm/@lerna+child-process@7.1.4/node_modules/@lerna/child-process/index.js:39:16)
+17 error     at updateRemote (/home/yanlei/project/multiple-lint-pkg/node_modules/.pnpm/lerna@7.1.4/node_modules/lerna/dist/index.js:7613:18)
+17 error     at isBehindUpstream (/home/yanlei/project/multiple-lint-pkg/node_modules/.pnpm/lerna@7.1.4/node_modules/lerna/dist/index.js:7603:3)
+17 error     at VersionCommand.initialize (/home/yanlei/project/multiple-lint-pkg/node_modules/.pnpm/lerna@7.1.4/node_modules/lerna/dist/index.js:7913:57)
