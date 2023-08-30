@@ -14,12 +14,6 @@
   "homepage": "https://github.com/ygood/multiple-lint-pkg#readme",
   "license": "MIT",
   "main": "index.js",
-  "directories": {
-    "lib": "lib"
-  },
-  "files": [
-    "lib"
-  ],
   "devDependencies": {
     "@babel/core": "7.22.10",
     "@babel/eslint-parser": "7.22.10",
