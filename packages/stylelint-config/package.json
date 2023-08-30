@@ -1,6 +1,6 @@
 {
   "name": "mlp-stylelint-config",
-  "version": "0.0.1",
+  "version": "1.0.0-alpha.0",
   "description": "style lint package",
   "keywords": [
     "style",
@@ -22,9 +22,9 @@
   },
   "devDependencies": {
     "jest": "^29.5.0",
+    "postcss-scss": "4.0.7",
     "stylelint": "^14.3.0",
-    "stylelint-scss": "^4.1.0",
-    "postcss-scss": "4.0.7"
+    "stylelint-scss": "^4.1.0"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"

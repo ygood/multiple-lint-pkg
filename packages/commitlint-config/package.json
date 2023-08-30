@@ -1,6 +1,6 @@
 {
   "name": "mlp-commitlint-config",
-  "version": "0.0.1",
+  "version": "1.0.0-alpha.0",
   "description": "commit lint package",
   "keywords": [
     "git",
