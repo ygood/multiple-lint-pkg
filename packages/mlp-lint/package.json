@@ -21,11 +21,7 @@
   "scripts": {
     "dev": "rm -rf lib && npm run copyfiles && tsc -w",
     "build": "rm -rf lib && npm run copyfiles && tsc",
-    "copyfiles": "copyfiles -a -u 1 \"src/config/**\" lib",
-    "test": "npm run build && jest",
-    "coverage": "nyc jest --silent --forceExit",
-    "prepublishOnly": "npm run test",
-    "lint": "eslint src/ --ext ts"
+    "copyfiles": "copyfiles -a -u 1 \"src/config/**\" lib"
   },
   "publishConfig": {
     "registry": "https://registry.npmmirror.com/"
