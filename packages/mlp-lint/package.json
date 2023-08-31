@@ -1,6 +1,6 @@
 {
   "name": "mlp-lint",
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.1-alpha.0",
   "description": "multiple lint package cli",
   "keywords": [
     "cli",
@@ -82,10 +82,10 @@
     "lodash": "^4.17.21",
     "markdownlint": "^0.30.0",
     "markdownlint-rule-helpers": "^0.21.0",
-    "mlp-commitlint-config": "^1.0.0-alpha.0",
-    "mlp-eslint-config": "^1.0.0-alpha.0",
-    "mlp-markdownlint-config": "^1.0.0-alpha.0",
-    "mlp-stylelint-config": "^1.0.0-alpha.0",
+    "mlp-commitlint-config": "^1.0.1-alpha.0",
+    "mlp-eslint-config": "^1.0.1-alpha.0",
+    "mlp-markdownlint-config": "^1.0.1-alpha.0",
+    "mlp-stylelint-config": "^1.0.1-alpha.0",
     "ora": "^5.1.0",
     "prettier": "^3.0.2",
     "strip-ansi": "6.0.0",
