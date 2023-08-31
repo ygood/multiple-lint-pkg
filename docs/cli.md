@@ -14,7 +14,7 @@ nav:
 
 | 规范                                                              | Lint 工具                                                  | npm 包                                                                           |
 | ----------------------------------------------------------------- | ---------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| JavaScript 编码规范 <br/> TypeScript 编码规范 <br/> Node 编码规范 | [ESLint](https://eslint.org/)                              | [mlp-eslint-config](https://www.npmjs.com/package/mlp-eslint-config)             |
+| JavaScript 编码规范 <br/> TypeScript 编码规范 <br/> Node 编码规范 | [ESLint](https://eslint.org/)                              | [eslint-config-mlp](https://www.npmjs.com/package/eslint-config-mlp)             |
 | CSS 编码规范                                                      | [stylelint](https://stylelint.io/)                         | [mlp-stylelint-config](https://www.npmjs.com/package/mlp-stylelint-config)       |
 | Git 规范                                                          | [commitlint](https://commitlint.js.org/#/)                 | [mlp-commitlint-config](https://www.npmjs.com/package/mlp-commitlint-config)     |
 | 文档规范                                                          | [markdownlint](https://github.com/DavidAnson/markdownlint) | [mlp-markdownlint-config](https://www.npmjs.com/package/mlp-markdownlint-config) |
@@ -45,7 +45,7 @@ npm install mlp-lint -g
 
 - 安装各种依赖：包括 `Linter` 依赖，如 [ESLint](https://eslint.org/)、[stylelint](https://stylelint.io/)、[commitlint](https://commitlint.js.org/#/)、[markdownlint](https://github.com/DavidAnson/markdownlint) 等
 - 写入各种配置文件，包括：
-  - `.eslintrc.js`、`.eslintignore`：ESLint 配置（继承 `mlp-eslint-config`）及黑名单文件
+  - `.eslintrc.js`、`.eslintignore`：ESLint 配置（继承 `eslint-config-mlp`）及黑名单文件
   - `.stylelintrc.js`、`.stylelintignore`：stylelint 配置（继承 `mlp-stylelint-config`）及黑名单文件
   - `commitlint.config.js`：commitlint 配置（继承 `mlp-commitlint-config`）
   - `.markdownlint.json`、`.markdownlintignore`：`markdownlint` 配置及黑名单文件

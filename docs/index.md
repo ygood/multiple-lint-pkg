@@ -17,9 +17,9 @@ features:
     link: /lint-utils#mlp-stylelint-config
     description: 规范样式文件语法，css，less，sass
 
-  - title: mlp-eslint-config
+  - title: eslint-config-mlp
     emoji: 🛫
-    link: /lint-utils#mlp-eslint-config
+    link: /lint-utils#eslint-config-mlp
     description: 规范js，ts，vue，react，node项目语法
 
   - title: mlp-commitlint-config

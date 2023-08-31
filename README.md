@@ -14,7 +14,7 @@ style 检查工具包
 
 markdown 检查工具包
 
-### mlp-eslint-config
+### eslint-config-mlp
 
 eslint 检查工具包
 

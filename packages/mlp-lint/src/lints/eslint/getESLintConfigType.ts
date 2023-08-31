@@ -17,5 +17,5 @@ export default (cwd: string, pkg: IPKG) => {
   }
   // 如果已/结尾则使用index替换，如果已/开头，则去除开头的/
   const type = `${language}/${dsl}`.replace(/\/$/, '/index').replace(/^\//, '');
-  return `mlp-eslint-config/${type}`;
+  return `eslint-config-mlp/${type}`;
 };
