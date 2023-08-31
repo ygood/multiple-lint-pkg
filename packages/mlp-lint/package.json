@@ -1,6 +1,6 @@
 {
   "name": "mlp-lint",
-  "version": "1.2.0-alpha.0",
+  "version": "1.2.1-alpha.0",
   "description": "multiple lint package cli",
   "keywords": [
     "cli",
@@ -90,14 +90,14 @@
     "mlp-markdownlint-config": "workspace:^",
     "mlp-stylelint-config": "workspace:^",
     "ora": "^5.1.0",
+    "postcss-scss": "4.0.7",
     "prettier": "^3.0.2",
     "strip-ansi": "6.0.0",
     "stylelint": "^15.10.3",
     "stylelint-scss": "^5.1.0",
     "terminal-link": "2.1.1",
     "text-table": "^0.2.0",
-    "vue-eslint-parser": "^9.3.1",
-    "postcss-scss": "4.0.7"
+    "vue-eslint-parser": "^9.3.1"
   },
   "gitHead": "7d3a22044e14c6f326b540854fa92903a1804134"
 }
