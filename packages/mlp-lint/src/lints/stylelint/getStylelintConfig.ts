@@ -1,5 +1,5 @@
 import fs from 'fs-extra';
-import glob from 'glob';
+import { globSync } from 'glob';
 import path from 'path';
 import { LinterOptions } from 'stylelint';
 import type { Config, IPKG, IScanOptions } from '../../types';
@@ -22,7 +22,7 @@ export function getStylelintConfig(opts: IScanOptions, pkg: IPKG, config: Config
     Object.assign(lintConfig, config.stylelintOptions);
   } else {
     // 根据扫描目录下有无lintrc文件，若无则使用默认的 lint 配置
-    const lintConfigFiles = glob.sync('.stylelintrc?(.@(js|yaml|yml|json))', { cwd });
+    const lintConfigFiles = globSync('.stylelintrc?(.@(js|yaml|yml|json))', { cwd });
     if (lintConfigFiles.length === 0 && !pkg.stylelint) {
       lintConfig.config = {
         extends: 'mlp-stylelint-config',
