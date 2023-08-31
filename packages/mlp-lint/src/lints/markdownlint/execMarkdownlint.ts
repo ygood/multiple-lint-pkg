@@ -17,10 +17,7 @@ export default async (options: DoMarkdownlintOptions) => {
   if (options.files) {
     files = options.files.filter((name) => MARKDOWN_LINT_FILE_EXT.includes(extname(name)));
   } else {
-    const pattern = join(
-      options.include,
-      `**/*.{${MARKDOWN_LINT_FILE_EXT.map((t) => t.replace(/^\./, '')).join(',')}}`,
-    );
+    const pattern = join(options.include, `**/*.md`);
     // 查找出所有校验格式的文件
     files = await fg(pattern, {
       cwd: options.cwd,

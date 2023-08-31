@@ -96,7 +96,8 @@
     "stylelint-scss": "^5.1.0",
     "terminal-link": "2.1.1",
     "text-table": "^0.2.0",
-    "vue-eslint-parser": "^9.3.1"
+    "vue-eslint-parser": "^9.3.1",
+    "postcss-scss": "4.0.7"
   },
   "gitHead": "7d3a22044e14c6f326b540854fa92903a1804134"
 }

@@ -17,7 +17,7 @@ export default (options: IScanOptions, pkg: IPKG, config: Config) => {
     // 若用户传入了 markdownlintOptions，则用用户的
     Object.assign(lintConfig, config.markdownlintOptions);
   } else {
-    const lintConfigFiles = globSync('.markdownlint(.@(yaml|yml|json))', { cwd });
+    const lintConfigFiles = globSync('.markdownlint.@(yaml|yml|json)', { cwd });
     if (lintConfigFiles.length === 0) {
       lintConfig.config = markdownLintConfig;
     } else {
