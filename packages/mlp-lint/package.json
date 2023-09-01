@@ -1,6 +1,6 @@
 {
   "name": "mlp-lint",
-  "version": "1.5.0-alpha.0",
+  "version": "1.5.1-alpha.0",
   "description": "multiple lint package cli",
   "keywords": [
     "cli",
@@ -84,9 +84,9 @@
     "fs-extra": "^11.1.1",
     "glob": "^10.3.3",
     "husky": "^8.0.3",
-    "lint-staged": "14.0.1",
     "inquirer": "8.0.0",
     "is-docker": "2.1.1",
+    "lint-staged": "14.0.1",
     "lodash": "^4.17.21",
     "markdownlint": "^0.30.0",
     "markdownlint-rule-helpers": "^0.21.0",
