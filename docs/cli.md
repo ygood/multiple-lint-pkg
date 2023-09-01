@@ -84,7 +84,7 @@ npm install mlp-lint -g
 
 #### `mlp-lint commit-file-scan` 提交文件扫描
 
-在 git commit 时对提交文件进行规范问题扫描，需配合 git 的 pre-commit 钩子使用。
+在 git commit 时对提交文件进行规范问题扫描，需配合 [husky](https://www.npmjs.com/package/husky) 和 [lint-staged](https://github.com/okonet/lint-staged#readme) 的 pre-commit 钩子使用。
 
 支持下列参数：
 

@@ -8,6 +8,7 @@ import { IInitOptions, IPKG } from '../types';
 import log from '../utils/log';
 import conflictResolve from '../utils/conflict-resolve';
 import generateTemplate from '../utils/generate-template';
+import execa from 'execa';
 
 let step = 0;
 
@@ -62,6 +63,20 @@ const chooseEnablePrettier = async () => {
     type: 'confirm',
     name: 'enable',
     message: `Step ${++step}. 是否需要使用 Prettier 用于代码优化`,
+    default: true,
+  });
+
+  return enable;
+};
+
+/**
+ * 选择是否启用 Husky
+ */
+const chooseEnableHusky = async () => {
+  const { enable } = await inquirer.prompt({
+    type: 'confirm',
+    name: 'enable',
+    message: `Step ${++step}. 是否需要使用 Husky 用于代码提交检查`,
     default: true,
   });
 
@@ -126,6 +141,16 @@ export default async (options: IInitOptions) => {
     }
   }
 
+  // 配置 git hooks
+  const enableHusky = await chooseEnableHusky();
+  if (enableHusky) {
+    log.info(`Step ${++step}. 安装husky相关依赖`);
+    const npm = await npmType;
+    // 安装当前包的依赖
+    spawn.sync(npm, ['i', '-D', 'husky', 'lint-staged'], { stdio: 'inherit', cwd });
+    log.success(`Step ${step}. 安装husky相关依赖 :D`);
+  }
+
   // 更新 pkg.json
   pkg = fs.readJSONSync(pkgPath);
   // 在 `package.json` 中写入 `scripts`
@@ -139,19 +164,58 @@ export default async (options: IInitOptions) => {
     pkg.scripts[`${PKG_NAME}-fix`] = `${PKG_NAME} fix`;
   }
 
-  // 配置 git hooks
-  log.info(`Step ${++step}. 配置 git commit 代码校验，以及commit-msg校验`);
-  if (!pkg.husky) pkg.husky = {};
-  if (!pkg.husky.hooks) pkg.husky.hooks = {};
-  pkg.husky.hooks['pre-commit'] = `${PKG_NAME} commit-file-scan`;
-  pkg.husky.hooks['commit-msg'] = `${PKG_NAME} commit-msg-scan`;
+  if (enableHusky) {
+    log.info(`Step ${++step}. 配置 git commit 代码校验，以及commit-msg校验`);
+    if (!pkg['lint-staged']) pkg['lint-staged'] = {};
+    pkg['lint-staged'][
+      'src/**/*.{js,jsx,ts,tsx,css,less,scss,md}'
+    ] = `${PKG_NAME} commit-file-scan`;
+    log.success(`Step ${step}. 配置 git commit 代码校验，以及commit-msg校验成功 :D`);
+  }
   fs.writeFileSync(pkgPath, JSON.stringify(pkg, null, 2));
-  log.success(`Step ${step}. 配置 git commit 代码校验，以及commit-msg校验成功 :D`);
 
   // 生成对应的配置文件
   log.info(`Step ${++step}. 写入配置文件`);
   generateTemplate(cwd, config);
   log.success(`Step ${step}. 写入配置文件成功 :D`);
+
+  // 判断是否存在git命令
+  let existGit = true;
+  if (enableHusky) {
+    try {
+      await execa('git', ['-v']);
+    } catch (error) {
+      log.warn(`当前环境不存在git工具，请安装git后执行以下命令`);
+      log.warn(`1. git init`);
+      log.warn(`2. npx husky install`);
+      log.warn(`3. npx husky add .husky/commit-msg "npx commitlint --edit $1"`);
+      log.warn(`4. npx husky add .husky/pre-commit "npm exec lint-staged"`);
+      existGit = false;
+    }
+  }
+
+  // 生成husky脚本
+  if (enableHusky && existGit) {
+    const gitPath = path.resolve(cwd, '.git');
+    // 判断是否存在.git文件，不存在则自动执行git init 命令
+    if (!fs.existsSync(gitPath)) {
+      log.info(`当前目录未进行git初始化，自动执行git init`);
+      spawn.sync('git', ['init'], { stdio: 'inherit', cwd });
+      log.success(`git 初始化完成`);
+    }
+    // 初始化husky
+    log.info(`Step ${++step}. 生成husy脚本配置`);
+    spawn.sync('npx', ['husky', 'install'], { stdio: 'inherit', cwd });
+    spawn.sync('npx', ['husky', 'add', '.husky/commit-msg', 'npx commitlint --edit $1'], {
+      stdio: 'inherit',
+      cwd,
+    });
+    spawn.sync('npx', ['husky', 'add', '.husky/pre-commit', 'npm exec lint-staged'], {
+      stdio: 'inherit',
+      cwd,
+    });
+    log.success(`Step ${step}. 生成husy脚本配置 :D`);
+  }
 
   // 完成信息
   const logs = [`${PKG_NAME} 初始化完成 :D`].join('\r\n');
