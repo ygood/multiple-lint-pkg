@@ -1,5 +1,5 @@
 {
-  "name": "@commitlint/mlp-commitlint-config",
+  "name": "@mlp/commitlint-config",
   "version": "1.3.0-alpha.0",
   "description": "commit lint package",
   "keywords": [

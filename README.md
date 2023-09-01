@@ -18,7 +18,7 @@ markdown 检查工具包
 
 eslint 检查工具包
 
-### @commitlint/mlp-commitlint-config
+### @mlp/commitlint-config
 
 commitlint 检查工具包
 

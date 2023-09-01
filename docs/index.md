@@ -22,7 +22,7 @@ features:
     link: /lint-utils#eslint-config-mlp
     description: 规范js，ts，vue，react，node项目语法
 
-  - title: @commitlint/mlp-commitlint-config
+  - title: @mlp/commitlint-config
     emoji: 🛬
     link: /lint-utils#mlp-commitlint-config
     description: 规范提交信息项目语法

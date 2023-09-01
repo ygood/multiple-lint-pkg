@@ -340,7 +340,7 @@ npm install --save-dev eslint-config-prettier eslint-plugin-prettier
   - `env`: 指定代码的运行环境，每个环境预定义了一组对应的全局变量，本包已开启的环境有 browser、node、jquery、es6 及几个测试框架的环境。
 - 了解常用的 ESLint 命令，如 `--fix`、`--ext`，可参考官网的 [Command Line Interface](http://eslint.org/docs/user-guide/command-line-interface)。
 
-## @commitlint/mlp-commitlint-config
+## @mlp/commitlint-config
 
 > Git commit 规范
 
@@ -352,13 +352,13 @@ npm install --save-dev eslint-config-prettier eslint-plugin-prettier
 
 ```bash
 # pnpm
-pnpm install @commitlint/mlp-commitlint-config @commitlint/cli --save-dev
+pnpm install @mlp/commitlint-config @commitlint/cli --save-dev
 
 # yarn
-yarn add @commitlint/mlp-commitlint-config @commitlint/cli --save-dev
+yarn add @mlp/commitlint-config @commitlint/cli --save-dev
 
 # npm
-npm install @commitlint/mlp-commitlint-config @commitlint/cli --save-dev
+npm install @mlp/commitlint-config @commitlint/cli --save-dev
 ```
 
 ### 使用
@@ -367,7 +367,7 @@ npm install @commitlint/mlp-commitlint-config @commitlint/cli --save-dev
 
 ```javascript
 module.exports = {
-  extends: ['@commitlint/mlp-commitlint-config'],
+  extends: ['@mlp/commitlint-config'],
 };
 ```
 
