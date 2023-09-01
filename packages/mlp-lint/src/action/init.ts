@@ -147,7 +147,10 @@ export default async (options: IInitOptions) => {
     log.info(`Step ${++step}. 安装husky相关依赖`);
     const npm = await npmType;
     // 安装当前包的依赖
-    spawn.sync(npm, ['i', '-D', 'husky', 'lint-staged'], { stdio: 'inherit', cwd });
+    spawn.sync(npm, ['i', '-D', 'husky', 'lint-staged', '@mlpconfig/commitlint-config'], {
+      stdio: 'inherit',
+      cwd,
+    });
     log.success(`Step ${step}. 安装husky相关依赖 :D`);
   }
 
