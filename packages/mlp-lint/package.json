@@ -56,7 +56,7 @@
     "@babel/eslint-parser": "^7.22.11",
     "@babel/preset-react": "^7.22.5",
     "@commitlint/cli": "^17.7.1",
-    "@mlp/commitlint-config": "workspace:^",
+    "@mlpconfig/commitlint-config": "^1.4.0-alpha.0",
     "@typescript-eslint/eslint-plugin": "^6.4.1",
     "@typescript-eslint/parser": "^6.4.1",
     "chalk": "4.1.2",
@@ -67,7 +67,7 @@
     "eslint": "^8.47.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-egg": "^12.2.1",
-    "eslint-config-mlp": "workspace:^",
+    "eslint-config-mlp": "^1.4.0-alpha.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-import-resolver-typescript": "^3.6.0",
     "eslint-plugin-eslint-plugin": "^5.1.1",
@@ -88,8 +88,8 @@
     "lodash": "^4.17.21",
     "markdownlint": "^0.30.0",
     "markdownlint-rule-helpers": "^0.21.0",
-    "mlp-markdownlint-config": "workspace:^",
-    "mlp-stylelint-config": "workspace:^",
+    "mlp-markdownlint-config": "^1.4.0-alpha.0",
+    "mlp-stylelint-config": "^1.4.0-alpha.0",
     "ora": "^5.1.0",
     "postcss-scss": "4.0.7",
     "prettier": "^3.0.2",
@@ -100,5 +100,5 @@
     "text-table": "^0.2.0",
     "vue-eslint-parser": "^9.3.1"
   },
-  "gitHead": "910ca190b0751e6bbcc3d95539caab1887684970"
+  "gitHead": "e30b836e07132785d1211a501f701d6cf7559068"
 }

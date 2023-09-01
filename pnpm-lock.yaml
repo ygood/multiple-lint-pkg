@@ -134,7 +134,7 @@ importers:
       '@commitlint/cli':
         specifier: ^17.7.1
         version: 17.7.1
-      '@mlp/commitlint-config':
+      '@mlpconfig/commitlint-config':
         specifier: workspace:^
         version: link:../commitlint-config
       '@typescript-eslint/eslint-plugin':
