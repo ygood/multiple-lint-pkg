@@ -1,6 +1,6 @@
 {
   "name": "@mlpconfig/commitlint-config",
-  "version": "1.4.0-alpha.0",
+  "version": "1.5.0-alpha.0",
   "description": "commit lint package",
   "keywords": [
     "git",
@@ -27,6 +27,5 @@
   "dependencies": {
     "conventional-changelog-conventionalcommits": "^4.5.0"
   },
-  "devDependencies": {},
   "gitHead": "910ca190b0751e6bbcc3d95539caab1887684970"
 }
