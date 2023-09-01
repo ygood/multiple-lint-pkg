@@ -1,4 +1,4 @@
-# `mlp-commitlint-config`
+# `@commitlint/mlp-commitlint-config`
 
 > Git commit 规范
 
@@ -10,13 +10,13 @@
 
 ```bash
 # pnpm
-pnpm install mlp-commitlint-config @commitlint/cli --save-dev
+pnpm install @commitlint/mlp-commitlint-config @commitlint/cli --save-dev
 
 # yarn
-yarn add mlp-commitlint-config @commitlint/cli --save-dev
+yarn add @commitlint/mlp-commitlint-config @commitlint/cli --save-dev
 
 # npm
-npm install mlp-commitlint-config @commitlint/cli --save-dev
+npm install @commitlint/mlp-commitlint-config @commitlint/cli --save-dev
 ```
 
 ## 使用
@@ -25,7 +25,7 @@ npm install mlp-commitlint-config @commitlint/cli --save-dev
 
 ```javascript
 module.exports = {
-  extends: ['mlp-commitlint-config'],
+  extends: ['@commitlint/mlp-commitlint-config'],
 };
 ```
 

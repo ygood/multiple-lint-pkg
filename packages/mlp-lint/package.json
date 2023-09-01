@@ -86,7 +86,7 @@
     "lodash": "^4.17.21",
     "markdownlint": "^0.30.0",
     "markdownlint-rule-helpers": "^0.21.0",
-    "mlp-commitlint-config": "workspace:^",
+    "@commitlint/mlp-commitlint-config": "workspace:^",
     "mlp-markdownlint-config": "workspace:^",
     "mlp-stylelint-config": "workspace:^",
     "ora": "^5.1.0",
