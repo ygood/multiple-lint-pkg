@@ -1,6 +1,6 @@
 {
   "name": "mlp-lint",
-  "version": "1.3.0-alpha.0",
+  "version": "1.4.0-alpha.0",
   "description": "multiple lint package cli",
   "keywords": [
     "cli",
