@@ -14,7 +14,8 @@
   "license": "MIT",
   "main": "index.js",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "repository": {
     "type": "git",
